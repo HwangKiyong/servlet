@@ -15,5 +15,5 @@
 		<c:redirect url='4.numIn.jsp?msg=input number.'/>
 		<!-- forward를 사용해야되면 redirect를 쓸수있다. -->		
 <%	
-	}
+	} 
 %>
