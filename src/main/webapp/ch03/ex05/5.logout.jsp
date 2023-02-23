@@ -4,3 +4,4 @@
 	session.invalidate();
 %>
 <!-- invalidate() 는 session 객체가 없어진다. -->
+<!-- logout 됫을때 시키는것이다. -->

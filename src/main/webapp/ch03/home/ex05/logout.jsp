@@ -3,6 +3,7 @@
 <%
 	session.invalidate();
 %>
+<c:redirect url='main.jsp'/>
 <%--
 과제:
 메인에서 로그인 링크를 누르면, 로그인 폼으로 이동한다.
