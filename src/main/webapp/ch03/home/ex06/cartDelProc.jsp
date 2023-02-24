@@ -2,16 +2,27 @@
 <%@ page import='java.util.List, java.util.ArrayList' %>
 <%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
 <%
+	//List<String> cart = (List<String>session.getAttribute("cart"));
 	String[] products = request.getParameterValues("product");
+	Object cartObj = session.getAttribute("cart");
 	
-	if(products != null && products.length > 0) {
+	if(cartObj != null) {
+		List<String> cart = (List<String>)cartObj;
 		
-		List<String> cart = (List<String>)session.getAttribute("cart"); //이전 카트를 가져온것이다.
-		for(String product: products)
-			cart.remove(product);
-		
-		session.setAttribute("cart", cart);
+		if(products != null && products.length > 0) {
+			for(String product: products)
+				cart.remove(product);
+		} else {
+%>
+			<c:set var='msg' value='장바구니에서 뺄 물건을 선택하세요.'/>
+<%
+		}
+	} else {
+%>
+			<c:set var='msg' value='장바구니가 없습니다.'/>
+<%
 	}
 %>
-
-	<c:redirect url='cartOut.jsp'/>
+<c:redirect url='cartOut.jsp'>
+	<c:param name='msg' value='${msg}'/>
+</c:redirect>
