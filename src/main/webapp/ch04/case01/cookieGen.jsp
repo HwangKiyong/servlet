@@ -7,3 +7,5 @@
 	response.addCookie(cookie1);
 	response.addCookie(cookie2);
 %>
+
+<!-- Cookie 객체를 생성하면된다. 생성만 있다.-->

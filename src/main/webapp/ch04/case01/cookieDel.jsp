@@ -6,3 +6,5 @@
 	
 	response.addCookie(cookie);
 %>
+
+<!-- setMaxAge cookie의 수명을 정하는것이다. -->
