@@ -18,7 +18,7 @@ public class Configuration {
 		}
 	}
 	
-	public static <T> T getMapper(Class<T> agr) {
-		return sqlSessionFactory.openSession(true).getMapper(agr);
+	public static <T> T getMapper(Class<T> arg) {
+		return sqlSessionFactory.openSession(true).getMapper(arg);
 	}
 }
